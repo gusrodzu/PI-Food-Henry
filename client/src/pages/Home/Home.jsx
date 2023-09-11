@@ -118,15 +118,15 @@ const Home = ({ currentPage, setCurrentPage }) => {
           <div className={style.messageBox}>
             <img src={plato} alt="img" className={style} />
 
-            
-            <h3> <span>Ouch!</span> <br></br>
-            Buscamos en la cocina, pero no encontramos nada.
+            <h3>
+              {" "}
+              <span>Ouch!</span> <br></br>
+              Buscamos en la cocina, pero no encontramos nada.
             </h3>
-
           </div>
         )}
       </article>
-{/* 
+      {/* 
       <Footer
         recipesPerPage={recipesPerPage}
         currentPage={currentPage}
@@ -134,8 +134,7 @@ const Home = ({ currentPage, setCurrentPage }) => {
         totalRecipes={totalRecipes}
       /> */}
 
-
-{recipes.length > 0 && (
+      {recipes.length > 0 && (
         <Footer
           recipesPerPage={recipesPerPage}
           currentPage={currentPage}
@@ -143,7 +142,6 @@ const Home = ({ currentPage, setCurrentPage }) => {
           totalRecipes={totalRecipes}
         />
       )}
-      
     </div>
   );
 };

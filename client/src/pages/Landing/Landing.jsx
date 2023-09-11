@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
-import style from "./Landing.module.css";
 
+import style from "./Landing.module.css";
+import Footer from "../../components/Footer/Footer";
 
 const Landing = () => {
   return (
@@ -8,23 +8,39 @@ const Landing = () => {
       <div className={style.containertext}>
         <div>
           <div className={style.box}>
-            <h2 className={style.title}>Bienvenidos</h2>
+            <h2 className={style.title}>
+              Las buenas elecciones de alimentos son buenas inversiones.
+            </h2>
             <p className={style.text}>
-              Cocina una gran variedad de recetas de cocina con reseñas, fotos y
-              calificaciones. Aprende y mejora tus habilidades culinarias con
-              las mejores recetas de cocina. Sube tus propias recetas de cocina,
-              reseñas y fotos para formar parte de la de esta increible comunidad
+              Descubre un mundo de sabores y experiencias culinarias en nuestra
+              plataforma. Aquí, podrás explorar una amplia gama de recetas de
+              cocina, acompañadas de reseñas, fotografías y calificaciones que
+              te ayudarán a encontrar la inspiración perfecta para tu próxima
+              comida. ¡Mejora tus habilidades culinarias con nuestras destacadas
+              recetas y consejos!
             </p>
-            <Link to="/home" className={style.buttonblue}>
-              ¡Comienza a cocinar!
-            </Link>
+
+            <p className={style.text}>
+              Además, tú también puedes ser parte de esta increíble comunidad
+              culinaria. Comparte tus propias recetas de cocina, deja tus
+              reseñas y muestra tus habilidades fotográficas para inspirar a
+              otros amantes de la cocina. Únete a nosotros en este emocionante
+              viaje gastronómico y forma parte de una comunidad apasionada por
+              la buena comida y la cocina creativa
+            </p>
+            <button
+              className={style.button}
+              onClick={() => (window.location.href = "../Home")}
+            >
+              ¡Comienza ahora!
+            </button>
           </div>
         </div>
-
-        {/* <div className={style.photo}> Hola esta es la imagen </div> */}
-        {/* <img src={control} alt="img" className={style.img} /> */}
+        
       </div>
+      
     </div>
+    
   );
 };
 

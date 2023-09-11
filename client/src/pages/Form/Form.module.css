@@ -30,12 +30,12 @@
 
 .title {
   font-size: 28px;
-  color: #000000;
+  color: #333;
 }
 
 .text {
   font-size: 15px;
-  color: #000000;
+  color: #333;
   font-weight: 800;
 }
 
@@ -50,14 +50,14 @@
 }
 
 .field {
-  color: #ffffff;
+  color: #333;
   margin-bottom: 10px;
   flex: 1;
 }
 
 .field label {
   margin-bottom: 5px;
-  color: #000000;
+  color: #333;
   text-align: left;
 }
 
@@ -81,6 +81,20 @@
 
 .field select option {
   padding: 8px;
+}
+
+.fieldCard {
+  color: #333;
+  background: linear-gradient(to right, #fdfdfb, #fffffe);
+  width: 500px;
+  padding: 20px;
+  border: none;
+  border-radius: 20px;
+  border: solid 2px #6a6a6a;
+}
+
+.fieldContainer {
+  padding: 10px;
 }
 
 .error {
@@ -173,7 +187,7 @@
 
 .cardinfo {
   padding: 10px;
-  color: #000000;
+  color: #333;
 }
 
 .cardname {

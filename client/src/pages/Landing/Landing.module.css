@@ -1,16 +1,19 @@
+.h2{
+  font-size: 20px;
+}
+
 .container {
   background: url("../../assets/backhome.jpg") no-repeat center center;
   backdrop-filter: blur(300px);
   background-size: cover;
+  padding: 100px;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   height: 100vh;
 }
 
 .containertext {
-  background-color: #82640ae2;
-  backdrop-filter: blur(10px);
   padding: 20px;
   border-radius: 16px;
   max-width: 600px;
@@ -21,36 +24,38 @@
 }
 
 .title {
-  color: #000000;
-  font-size: 60px;
+  color: #333;
+  font-size: 55px;
   margin-bottom: 10px;
+  text-align: left;
+  
 }
 
 .text {
-  color: #000000;
+  color: #333;
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 20px;
+  text-align: left;
 }
 
 /* Estilos para el botón azul*/
 .buttonblue {
   color: white;
-  background-color: #35a3dc;
+  background: linear-gradient(to right,#96c244,#b0dc5e);
+  color: #ffffffd5;
   font-weight: 500;
   border-radius: 0.5rem;
   font-size: 1rem;
   line-height: 2rem;
   padding: 0.7rem 2rem;
-  text-align: center;
   text-decoration: none;
   margin-right: 0.5rem;
-  display: inline-flex;
-  align-items: center;
   border: none;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s;
   animation: pulse 1s infinite;
+
 }
 
 .buttonblue:hover {
@@ -58,3 +63,32 @@
 }
 
 
+.button {
+  color: white;
+  background: linear-gradient(to right,#96c244,#b0dc5e);
+  font-weight: 500;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  line-height: 2rem;
+  padding: 0.7rem 2rem;
+  text-decoration: none;
+  margin-right: 0.5rem;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+
+  .button:hover {
+    background-color: #1f546d;
+  }
+
+
+}
+
+.buttonblue:hover {
+  background-color: #1f546d;
+}
+
+a{
+  align-content: flex-start;
+  
+}

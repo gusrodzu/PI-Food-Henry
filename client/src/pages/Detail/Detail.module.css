@@ -39,7 +39,7 @@
 
 .description {
   margin-bottom: 20px;
-  color: #000000;
+  color: #333;
   font-size: 12px;
   margin: 10px;
   padding: 30px;
@@ -105,7 +105,7 @@
 }
 
 .name {
-  color: #000000;
+  color: #333;
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 10px;
@@ -183,7 +183,7 @@
   font-size: 15px;
   font-weight: 100;
   margin-top: 10px;
-  color: #000000;
+  color: #333;
 }
 
 .title {
@@ -248,7 +248,7 @@
 
 
  .loader{
-  background-color: #000000;
+  background-color: #333;
   display: flex;
   align-items: center;
   justify-content: center;

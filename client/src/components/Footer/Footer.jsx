@@ -2,6 +2,8 @@ import React from "react";
 import Pagination from "../../components/Pagination/Pagination";
 import style from "./Footer.module.css";
 
+
+
 const Footer = ({
   recipesPerPage,
   currentPage,

@@ -6,6 +6,7 @@ import { getDiets, postRecipe } from "../../Redux/actions";
 import { Link } from "react-router-dom";
 // Imagenes
 import loading from "../../assets/download.png";
+import titulo from "../../assets/Rectángulo 1.png";
 
 const Form = () => {
   const dispatch = useDispatch();
@@ -144,8 +145,6 @@ const Form = () => {
             )}
           </div>
 
-        
-
           {/* Instrucciones */}
           <div className={style.field}>
             <label htmlFor="instructions" className={style.text}>
@@ -164,8 +163,8 @@ const Form = () => {
             )}
           </div>
 
-            {/* Puntuación */}
-            <div className={style.field}>
+          {/* Puntuación */}
+          <div className={style.field}>
             <label htmlFor="healthScore" className={style.text}>
               Puntuación
             </label>
@@ -229,16 +228,42 @@ const Form = () => {
 
         {/* Tarjeta de Creación */}
         <div className={style.cardhold}>
+        <h2 className={style.title}>Vista previa</h2>
           <div className={style.cardinfo}>
-            <img src={form.image ? form.image : loading}  alt="Imagen de la receta" />
-            <p>Nombre: {form.title}</p>
-            <p>Resumen: {form.summary}</p>
-            <p>Puntuación: {form.healthScore}</p>
-            <p>Instrucciones: {form.instructions}</p>
-            <p>Tipo de dieta: {form.diets.join(", ")}</p>
+            <img src={form.image ? form.image : loading} alt="" />
+
+            <div className={style.fieldContainer}>
+              <p className={style.text}>Nombre:</p>
+              <div className={style.fieldCard}>{form.title}</div>
+            </div>
+
+
+
+            <div className={style.fieldContainer}>
+            <p className={style.text}>Resumen:</p>
+              <div className={style.fieldCard}>{form.summary}</div>
+            </div>
+
+            <div className={style.fieldContainer}>
+            <p className={style.text}>Instrucciones:</p>
+              <div className={style.fieldCard}>{form.instructions}</div>
+            </div>
+
+
+            <div className={style.fieldContainer}>
+            <p className={style.text}>Puntuación:</p>
+              <div className={style.fieldCard}>{form.healthScore}</div>
+            </div>
+
+
+
+            <div className={style.fieldContainer}>
+            <p className={style.text}>Tipo de dieta: </p>
+              <div className={style.fieldCard}>{form.diets.join("/ ")}</div>
+            </div>
+
           </div>
         </div>
-        
       </div>
     </div>
   );
