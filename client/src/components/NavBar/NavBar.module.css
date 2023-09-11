@@ -1,0 +1,104 @@
+.buttonblack {
+  color: white;
+  background-color: #333;
+  border-radius: 0.5rem;
+  padding: 0.7rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+}
+
+.buttonblack:hover {
+  background-color: #333;
+}
+
+.buttonblack svg {
+  display: inline;
+  width: 1.3rem;
+  height: 1.3rem;
+  margin-right: 0.75rem;
+  color: white;
+}
+
+.buttonblack:focus svg {
+  animation: spin_357 0.5s linear;
+}
+
+@keyframes spin_357 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.navbarContainer {
+  background-color: white;
+  display: flex;
+  width: 100%;
+  background-size: cover;
+  position: sticky;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  top: 0;
+  z-index: 100;
+
+}
+
+/* Estilos para la barra de navegación */
+.navBar {
+  display: flex;
+  gap: 5rem;
+}
+
+/* Estilos para los elementos del navbar */
+.navItem {
+  display: flex;
+}
+
+/* Contenedor del logo */
+.logoContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  padding: 0 10px 0 0;
+}
+
+.logoImage {
+  margin-right: 10px;
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Media query para movil */
+@media screen and (max-width: 480px) {
+  .navbarContainer {
+    padding: 20px;
+  }
+
+  .navBar {
+    flex-direction: column; /* Stack navigation items vertically */
+    gap: 10px;
+  }
+
+  .navItem {
+    margin: 0px;
+  }
+}
+
+/* Media query para movil */
+@media screen and (max-width: 480px) {
+  .buttonblack {
+    align-items: center;
+    font-size: 0.9rem;
+    padding: 0.5rem 6rem;
+    margin-top: 10px;
+  }
+}

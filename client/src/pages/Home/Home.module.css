@@ -1,0 +1,252 @@
+/* Estilos generales */
+.containerhome {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  color: #000000;
+
+}
+
+.leftSide {
+  background-color: white;
+  background-size: cover;
+  position: fixed;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  /* justify-content: center; */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 5;
+
+}
+
+.label {
+  color: #000000;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.select {
+  margin: 10px;
+  padding: 5px 10px;
+  border-radius: 12px;
+  transition: 0.3s ease-in-out;
+  text-transform: uppercase;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 16px;
+  background: linear-gradient(to right,#96c244,#b0dc5e);
+  color: #ffffffd5;
+  font-weight: 600;
+}
+
+.select:focus {
+  margin: 10px;
+  cursor: pointer;
+  transform: scale(1.04);
+}
+
+.select option {
+  border: solid 2px #000000;
+  background-color: #548039;
+}
+
+.article {
+  display: flex;
+  margin-left: 250px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.errorContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  z-index: 9999;
+}
+
+.errorText {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.reloadButton {
+  color: white;
+  background-color: #80bd5b;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  line-height: 2rem;
+  padding: 0.7rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  margin-right: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+  animation: pulse 1s infinite;
+}
+
+.reloadButton:hover {
+  background-color: #385624;
+}
+
+.buttoncontainer {
+  padding: 20px;
+  background: linear-gradient(to right,#96c244,#b0dc5e);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  margin-top: 50px;
+  text-decoration: none;
+}
+
+.text {
+  text-align: left;
+  font-size: 15px;
+  font-weight: 100;
+  margin-top: 10px;
+  color: #ffffff;
+}
+
+.title {
+  text-align: left;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/*Botón azul*/
+.buttonblue {
+  color: white;
+  background-color: #35a3dc;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  line-height: 2rem;
+  padding: 0.7rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  margin-right: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+  animation: pulse 1s infinite;
+}
+
+.buttonblue:hover {
+  background-color: #1f546d;
+}
+
+.controlImg{
+  margin-top: -90px;
+  margin-bottom: -30px;
+  padding: 5px;
+  width: 150px;
+  height: 150px;
+}
+
+/* Contenedor del logo */
+.logoContainer {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+}
+
+.logoImage {
+  margin-right: 10px;
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+.messageBox {
+  margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .messageBox p {
+    margin: 10px;
+    font-size: 18px;
+    color: #333;
+    font-weight: 400;
+  }
+
+
+  /* Estilos para el footer fijo */
+.footer {
+  background-color: #ffffff48;
+  color: #fff; 
+  padding: 10px;
+  position: fixed; 
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  z-index: 3
+  ;
+}
+
+/* Media query para movil */
+@media screen and (max-width: 768px) {
+  .containerhome {
+    grid-template-columns: 1fr;
+  }
+
+  .leftSide {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .article {
+    margin-left: 0;
+  }
+}
+
+/* Media query pantalla grande */
+@media screen and (min-width: 1200px) {
+  .containerhome {
+    grid-template-columns: 250px 1fr;
+  }
+
+  .leftSide {
+    position: fixed;
+  }
+
+  .article {
+    margin-left: 250px;
+  }
+}

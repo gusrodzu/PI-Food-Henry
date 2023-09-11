@@ -1,0 +1,204 @@
+/* Estilos para el contenedor del navbar */
+.navbarContainer {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+/* Estilos para la barra de navegación */
+.navBar {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Estilos para los elementos del navbar */
+.navItem {
+  margin-right: 10px;
+}
+
+.container {
+  background: #ffffff;
+  backdrop-filter: blur(300px);
+  background-size: cover;
+}
+
+.title {
+  font-size: 28px;
+  color: #000000;
+}
+
+.text {
+  font-size: 15px;
+  color: #000000;
+  font-weight: 800;
+}
+
+.content {
+  display: flex;
+  padding-top: 10px;
+  padding: 100px;
+}
+
+.form {
+  flex: 1;
+}
+
+.field {
+  color: #ffffff;
+  margin-bottom: 10px;
+  flex: 1;
+}
+
+.field label {
+  margin-bottom: 5px;
+  color: #000000;
+  text-align: left;
+}
+
+.field input[type="text"],
+.field input[type="number"],
+.field textarea,
+.field select {
+  color: #8d919b;
+  background: linear-gradient(to right, #e1e1e0, #fefffd);
+  width: 500px;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: solid 2px #96c244;
+}
+
+.field textarea {
+  resize: vertical;
+}
+
+.field select option {
+  padding: 8px;
+}
+
+.error {
+  color: #ea5665;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Boton activo */
+.button {
+  color: white;
+  background-color: #35a3dc;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  line-height: 2rem;
+  padding: 0.7rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  margin-right: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+  animation: pulse 1s infinite;
+}
+
+.button:hover {
+  background-color: #1f546d;
+}
+
+.button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Estilos para el botón verde*/
+.buttonblack {
+  color: white;
+  background: linear-gradient(to right, #b0dc5e, #96c244);
+  font-weight: 500;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  line-height: 2rem;
+  padding: 0.7rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  margin-right: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+  animation: pulse 1s infinite;
+}
+
+.buttonblack:hover {
+  background-color: #385624;
+}
+
+.buttonblack svg {
+  display: inline;
+  width: 1.3rem;
+  height: 1.3rem;
+  margin-right: 0.75rem;
+  color: white;
+}
+
+.buttonblack:focus svg {
+  animation: spin_357 0.5s linear;
+}
+
+@keyframes spin_357 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cardhold {
+  flex: 1;
+  padding: 50px;
+  border-radius: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.cardinfo {
+  padding: 10px;
+  color: #000000;
+}
+
+.cardname {
+  font-size: 18px;
+  margin: 0;
+}
+
+/* Checkbox */
+.checked {
+  margin-bottom: 1rem;
+}
+
+.types {
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: 200;
+}
+
+.type {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+}
+
+input[type="checkbox"] {
+  margin-left: 5px;
+  font-weight: 300;
+}

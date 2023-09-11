@@ -1,0 +1,33 @@
+
+  /* Estilos para el footer fijo */
+  .footer {
+    background-color: #ffffff48; /* Color de fondo del footer */
+    color: #fff; 
+    padding: 10px;
+    position: fixed; 
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    z-index: 3
+  
+    ;
+  }
+
+  .container {
+    margin-left: 100px;
+    padding: 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    position: relative;
+
+  }
+
+  a{
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(48, 48, 48);
+  }
+  

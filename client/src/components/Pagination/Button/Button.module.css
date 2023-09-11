@@ -1,0 +1,53 @@
+.button {
+  font-size: 14px;
+  color: #000000; 
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  background: #ffffff; 
+  padding: 1em 1em;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  font-weight: bolder;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.button:before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 120%;
+  background-color: #b7b7b78a; 
+  top: 50%;
+  transform: skewX(30deg) translate(-150%, -50%);
+  transition: all 0.5s;
+}
+
+.button:hover {
+  background: linear-gradient(to right,#b0dc5e,#96c244);
+  color: #fff;}
+
+
+.button:active {
+  transform: scale(0.9);
+}
+
+.noButton {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .button {
+    font-size: 10px;
+    padding: 0.5em 1em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .button {
+    font-size: 8px;
+    padding: 0.5em 1em;
+  }
+}

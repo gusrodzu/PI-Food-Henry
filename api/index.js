@@ -17,12 +17,26 @@
 //     =====`-.____`.___ \_____/___.-`___.-'=====
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-const server = require('./src/app.js');
-const { conn } = require('./src/db.js');
+const server = require("./src/app.js");
+const { conn } = require("./src/db.js");
+require("dotenv").config();
 
-// Syncing all the models at once.
-conn.sync({ force: true }).then(() => {
-  server.listen(3001, () => {
-    console.log('%s listening at 3001'); // eslint-disable-line no-console
-  });
-});
+const { PORT } = process.env;
+
+async function startServer() {
+  try {
+    // Sincroniza todos los modelos de la base de datos.
+    await conn.sync({ force: true });  // Permite hacer un rest de la BD cada vez que se levanta el sercv
+
+    // Inicia el servidor para que escuche en el puerto especificado.
+    const app = server.listen(PORT, () => {
+      console.log(`Servidor corriendo correctamente en el puerto ${PORT}`);
+    });
+
+    return app;
+  } catch (error) {
+    console.error("Error al iniciar el servidor:", error);
+  }
+}
+
+startServer();
