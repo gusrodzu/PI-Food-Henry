@@ -15,7 +15,7 @@ const Home = ({ currentPage, setCurrentPage }) => {
   const dispatch = useDispatch();
   const { recipes, diets } = useSelector((state) => state);
 
-  const [recipesPerPage] = useState(12);
+  const [recipesPerPage] = useState(9);
 
   const totalRecipes = recipes.length;
   const lastIndex = currentPage * recipesPerPage;
@@ -26,6 +26,8 @@ const Home = ({ currentPage, setCurrentPage }) => {
     dispatch(order(value));
     setCurrentPage(1);
   };
+
+
   const handleFilter = (event) => {
     const { value, name } = event.target;
     if (name === "diets") {
@@ -44,7 +46,28 @@ const Home = ({ currentPage, setCurrentPage }) => {
   useEffect(() => {
     dispatch(getDiets());
     dispatch(getRecipes());
-  }, [dispatch]);
+  }, [dispatch])
+
+  // const handleFilter = (event) => {
+  //   const { value, name } = event.target;
+  //   let originFilter = "";
+    
+  //   if (name === "diets") {
+  //     originFilter = document.querySelector('select[name="origin"]').value;
+  //     if (originFilter === "") {
+  //       alert("Debes seleccionar primero el filtro de origen.");
+  //       return;
+  //     }
+  //   }
+  
+  //   dispatch(filter(value, originFilter)); // Pasa originFilter como parámetro
+  //   setCurrentPage(1);
+  // };
+
+  // useEffect(() => {
+  //   dispatch(getDiets());
+  //   dispatch(getRecipes());
+  // }, [dispatch]);
 
   return (
     <div>
@@ -56,16 +79,16 @@ const Home = ({ currentPage, setCurrentPage }) => {
           <select
             className={style.select}
             name="origin"
-            onChange={handleFilter}
-            defaultValue=""
-          >
-            <option value="" disabled hidden>
-              Origen
-            </option>
-            <option value="AllData">Todos</option>
-            <option value="db">Base de datos</option>
-            <option value="api">API</option>
-          </select>
+          onChange={handleFilter}
+          defaultValue=""
+        >
+          <option value="" disabled hidden>
+            Origin
+          </option>
+          <option value="AllData">Todos</option>
+          <option value="db">Base de datos</option>
+          <option value="api">Spoon API</option>
+        </select>
 
           <label className={style.label}>Tipo de dieta</label>
           <select
@@ -77,7 +100,7 @@ const Home = ({ currentPage, setCurrentPage }) => {
             <option value="" disabled hidden>
               Tipo de dieta
             </option>
-            <option value="AllDiets">All</option>
+            <option value="AllDiets">TODAS LAS DIETAS</option>
             {diets.length ? (
               diets.map((diet) => {
                 return <option key={diet.id}>{diet.name}</option>;

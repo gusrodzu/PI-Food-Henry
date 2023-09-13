@@ -2,15 +2,11 @@ import React from "react";
 import SearchBar from "../SearchBar/SearchBar";
 import style from "./NavBar.module.css";
 import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
 import logo from "../../assets/MrChef.png";
 
 const NavBar = ({ setCurrentPage }) => {
-  const { pathname } = useLocation();
-
-  // Función de ejemplo para recargar la página
   const handleReload = () => {
-    window.location.reload();
+    window.location.href = "/home";
   };
 
   return (
@@ -20,10 +16,12 @@ const NavBar = ({ setCurrentPage }) => {
           <img src={logo} alt="Logo" className={style.logoImage} />
         </Link>
       </div>
+
       <div className={style.navBar}>
         <div className={style.navItem}>
           <SearchBar setCurrentPage={setCurrentPage} />
         </div>
+
         <div className={style.navItem}>
           <button onClick={handleReload} className={style.buttonblack}>
             <svg
@@ -40,7 +38,7 @@ const NavBar = ({ setCurrentPage }) => {
                 fillRule="evenodd"
               ></path>
             </svg>
-            Recargar
+            Limpiar busquedas
           </button>
         </div>
       </div>
