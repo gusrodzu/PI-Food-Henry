@@ -26,7 +26,7 @@ const { PORT } = process.env;
 async function startServer() {
   try {
     // Sincroniza todos los modelos de la base de datos.
-    await conn.sync({ force: true });  // Permite hacer un rest de la BD cada vez que se levanta el servidor
+    await conn.sync({ force: false });  // Permite hacer un rest de la BD cada vez que se levanta el servidor
 
     // Inicia el servidor para que escuche en el puerto especificado.
     const app = server.listen(PORT, () => {

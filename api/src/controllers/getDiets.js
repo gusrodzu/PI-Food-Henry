@@ -22,11 +22,11 @@ const getDiets = async () => {
       const apiDiets = new Set(data.results.flatMap(recipe => recipe.diets));
       apiDiets.add("vegetarian");
 
-      // Preparar registros de dietas para insertar en la base de datos
+      // Prepara los registros de dietas para insertar en la base de datos
       const dietRecords = Array.from(apiDiets, diet => ({ name: diet }));
       await Diet.bulkCreate(dietRecords);
 
-      // Actualizar la lista de dietas después de insertarlas en la base de datos
+      // Actualiza la lista de dietas después de insertarlas en la base de datos
       diets = await Diet.findAll();
     }
 

@@ -1,26 +1,31 @@
+import React from "react";
 import SearchBar from "../SearchBar/SearchBar";
 import style from "./NavBar.module.css";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import logo from "../../assets/MrChef.png";
 
-const NavBar = (props) => {
+const NavBar = ({ setCurrentPage }) => {
+  const { pathname } = useLocation();
+
+  // Función de ejemplo para recargar la página
+  const handleReload = () => {
+    window.location.reload();
+  };
+
   return (
     <nav className={style.navbarContainer}>
-
       <div className={style.navItemLogo}>
         <Link to="/home" className={style.logoContainer}>
-          <img src={logo} alt="Logo" className={style.logoImage } />
+          <img src={logo} alt="Logo" className={style.logoImage} />
         </Link>
       </div>
-
       <div className={style.navBar}>
-
         <div className={style.navItem}>
-          <SearchBar />
+          <SearchBar setCurrentPage={setCurrentPage} />
         </div>
-
         <div className={style.navItem}>
-          <button onClick={props.handleReload} className={style.buttonblack}>
+          <button onClick={handleReload} className={style.buttonblack}>
             <svg
               viewBox="0 0 16 16"
               className="bi bi-arrow-repeat"
@@ -38,7 +43,6 @@ const NavBar = (props) => {
             Recargar
           </button>
         </div>
-        
       </div>
     </nav>
   );

@@ -3,16 +3,15 @@ import style from "./SearchBar.module.css";
 import { useDispatch } from "react-redux";
 import { searchRecipe } from "../../Redux/actions";
 
-const SearchBar = () => {
+const SearchBar = ({ setCurrentPage }) => {
   const dispatch = useDispatch();
   const [search, setSearch] = useState("");
 
   const handleChange = (event) => {
     const value = event.target.value;
     setSearch(value);
-  
+    setCurrentPage(1);
   };
-
   useEffect(() => {
     const searchTimeout = setTimeout(() => {
       dispatch(searchRecipe(search));
@@ -20,23 +19,20 @@ const SearchBar = () => {
     return () => clearTimeout(searchTimeout);
   }, [search, dispatch]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(searchRecipe(search));
-  };
+
 
   return (
     <div className={style.search}>
-      <input
-        type="text"
-        placeholder="Busca una receta"
-        value={search}
+       <input
         onChange={handleChange}
         className={style.searchinput}
+        value={search}
+        type="text"
+        placeholder="Busca una receta"
       />
       <button
         type="submit"
-        onClick={handleSubmit}
+        onClick={handleChange}
         className={style.searchbutton}
       >
         Buscar
