@@ -21,16 +21,11 @@ import {
 const DIETS_API_URL = "/diets";
 const RECIPES_API_URL = "/recipes";
 
-///////FILTRO Y ORDENADO///////
-
-// Acción para ordenar
+// Acción para ordenar las recetas
 export const order = (judgment) => ({ type: ORDER, payload: judgment });
 
-// Acción para filtrar
+// Acción para filtrar las recetas
 export const filter = (judgment) => ({ type: FILTER, payload: judgment });
-
-
-///////Dietas///////
 
 // Acción para obtener las dietas
 export const getDiets = () => async (dispatch) => {
@@ -41,8 +36,6 @@ export const getDiets = () => async (dispatch) => {
     dispatch({ type: GET_DIETS_ERROR, payload: error.message });
   }
 };
-
-///////Recetas///////
 
 // Acción para obtener las recetas
 export const getRecipes = () => async (dispatch) => {
@@ -87,6 +80,3 @@ export const postRecipe = (recipe) => async (dispatch) => {
     dispatch({ type: POST_RECIPE_ERROR, payload: error.message });
   }
 };
-
-
-

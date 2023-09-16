@@ -26,8 +26,6 @@ const Home = ({ currentPage, setCurrentPage }) => {
     dispatch(order(value));
     setCurrentPage(1);
   };
-
-
   const handleFilter = (event) => {
     const { value, name } = event.target;
     if (name === "diets") {
@@ -46,28 +44,7 @@ const Home = ({ currentPage, setCurrentPage }) => {
   useEffect(() => {
     dispatch(getDiets());
     dispatch(getRecipes());
-  }, [dispatch])
-
-  // const handleFilter = (event) => {
-  //   const { value, name } = event.target;
-  //   let originFilter = "";
-    
-  //   if (name === "diets") {
-  //     originFilter = document.querySelector('select[name="origin"]').value;
-  //     if (originFilter === "") {
-  //       alert("Debes seleccionar primero el filtro de origen.");
-  //       return;
-  //     }
-  //   }
-  
-  //   dispatch(filter(value, originFilter)); // Pasa originFilter como parámetro
-  //   setCurrentPage(1);
-  // };
-
-  // useEffect(() => {
-  //   dispatch(getDiets());
-  //   dispatch(getRecipes());
-  // }, [dispatch]);
+  }, [dispatch]);
 
   return (
     <div>
@@ -79,16 +56,19 @@ const Home = ({ currentPage, setCurrentPage }) => {
           <select
             className={style.select}
             name="origin"
-          onChange={handleFilter}
-          defaultValue=""
-        >
-          <option value="" disabled hidden>
-            Origin
-          </option>
-          <option value="AllData">Todos</option>
-          <option value="db">Base de datos</option>
-          <option value="api">Spoon API</option>
-        </select>
+            onChange={handleFilter}
+            defaultValue=""
+          >
+       
+            <option value="" disabled hidden>
+              Seleciona un origen
+            </option>
+            {/* El filtro "origen" se corrigió al agregar una opción vacía con "Selecciona un origen". 
+            Esto evita problemas al inicio y permite que el filtro funcione correctamente, */}
+            <option value="AllData">Todos</option>
+            <option value="db">Base de datos</option>
+            <option value="api">Spoon API</option>
+          </select>
 
           <label className={style.label}>Tipo de dieta</label>
           <select
@@ -98,9 +78,9 @@ const Home = ({ currentPage, setCurrentPage }) => {
             defaultValue=""
           >
             <option value="" disabled hidden>
-              Tipo de dieta
+            Seleciona una dieta
             </option>
-            <option value="AllDiets">TODAS LAS DIETAS</option>
+            <option value="AllDiets">Todas las dietas</option>
             {diets.length ? (
               diets.map((diet) => {
                 return <option key={diet.id}>{diet.name}</option>;
@@ -118,7 +98,7 @@ const Home = ({ currentPage, setCurrentPage }) => {
             defaultValue=""
           >
             <option value="" disabled hidden>
-              Orden
+            Seleciona un orden
             </option>
             <option value="ascendenteAlf">A-Z ⬆</option>
             <option value="descendenteAlf">Z-A ⬇</option>

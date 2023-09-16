@@ -7,23 +7,20 @@ const SearchBar = () => {
   const dispatch = useDispatch();
   const [search, setSearch] = useState("");
 
+  // Manejar cambios en el campo de búsqueda
   const handleChange = (event) => {
     const value = event.target.value;
     setSearch(value);
-  
   };
 
+  // Realizar la búsqueda cuando el usuario deja de escribir durante 00 ms
   useEffect(() => {
     const searchTimeout = setTimeout(() => {
       dispatch(searchRecipe(search));
-    }, 500); 
+    }, 100);
+
     return () => clearTimeout(searchTimeout);
   }, [search, dispatch]);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(searchRecipe(search));
-  };
 
   return (
     <div className={style.search}>
@@ -34,13 +31,6 @@ const SearchBar = () => {
         onChange={handleChange}
         className={style.searchinput}
       />
-      <button
-        type="submit"
-        onClick={handleSubmit}
-        className={style.searchbutton}
-      >
-        Buscar
-      </button>
     </div>
   );
 };

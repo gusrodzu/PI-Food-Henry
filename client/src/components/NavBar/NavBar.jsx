@@ -38,7 +38,7 @@ const NavBar = ({ setCurrentPage }) => {
                 fillRule="evenodd"
               ></path>
             </svg>
-            Limpiar busquedas
+            Limpiar busqueda
           </button>
         </div>
       </div>

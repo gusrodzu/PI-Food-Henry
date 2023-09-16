@@ -6,7 +6,6 @@
   height: 100%;
   display: grid;
   color: #333;
-
 }
 
 .leftSide {
@@ -21,10 +20,8 @@
   flex-direction: column;
   padding-top: 40px;
   padding-bottom: 30px;
-  /* justify-content: center; */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 5;
-
 }
 
 .label {
@@ -38,12 +35,12 @@
   padding: 5px 10px;
   border-radius: 12px;
   transition: 0.3s ease-in-out;
-  text-transform: uppercase;
+  text-transform: initial;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   font-size: 16px;
-  background: linear-gradient(to right,#96c244,#b0dc5e);
+  background: linear-gradient(to right, #96c244, #b0dc5e);
   color: #ffffffd5;
   font-weight: 600;
 }
@@ -111,7 +108,7 @@
 
 .buttoncontainer {
   padding: 20px;
-  background: linear-gradient(to right,#96c244,#b0dc5e);
+  background: linear-gradient(to right, #96c244, #b0dc5e);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -137,7 +134,7 @@
   color: #ffffff;
 }
 
-/*Botón azul*/
+/* Botón azul */
 .buttonblue {
   color: white;
   background-color: #35a3dc;
@@ -161,7 +158,7 @@
   background-color: #1f546d;
 }
 
-.controlImg{
+.controlImg {
   margin-top: -90px;
   margin-bottom: -30px;
   padding: 5px;
@@ -183,39 +180,36 @@
   max-height: 100%;
 }
 
-
 .messageBox {
   margin-top: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    height: 100px;
-    background-color: #f2f2f2;
-    border-radius: 10px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-  }
-  
-  .messageBox p {
-    margin: 10px;
-    font-size: 18px;
-    color: #333;
-    font-weight: 400;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
 
+.messageBox p {
+  margin: 10px;
+  font-size: 18px;
+  color: #333;
+  font-weight: 400;
+}
 
-  /* Estilos para el footer fijo */
+/* Estilos para el footer fijo */
 .footer {
   background-color: #ffffff48;
-  color: #fff; 
+  color: #fff;
   padding: 10px;
-  position: fixed; 
+  position: fixed;
   bottom: 0;
   width: 100%;
   text-align: center;
   align-items: center;
-  z-index: 3
-  ;
+  z-index: 3;
 }
 
 /* Media query para movil */
