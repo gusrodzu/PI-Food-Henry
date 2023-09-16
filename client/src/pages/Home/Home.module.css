@@ -43,6 +43,8 @@
   background: linear-gradient(to right, #96c244, #b0dc5e);
   color: #ffffffd5;
   font-weight: 600;
+  cursor: pointer;
+  
 }
 
 .select:focus {
@@ -54,6 +56,7 @@
 .select option {
   border: solid 2px #333;
   background-color: #548039;
+  
 }
 
 .article {
