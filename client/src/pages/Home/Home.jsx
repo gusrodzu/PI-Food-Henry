@@ -40,6 +40,7 @@ const Home = ({ currentPage, setCurrentPage }) => {
     dispatch(filter(value));
     setCurrentPage(1);
   };
+  
 
   useEffect(() => {
     dispatch(getDiets());

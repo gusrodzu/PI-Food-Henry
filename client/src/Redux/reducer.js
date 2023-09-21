@@ -1,10 +1,3 @@
-// Este archivo contiene el reducer de Redux que gestiona el estado de la 
-// aplicación en respuesta a las acciones definidas en tu aplicación. 
-// Cada caso en el switch maneja una acción específica y actualiza el estado en consecuencia. 
-// También se incluyen comentarios que explican el propósito de cada acción y caso en el reducer.
-
-
-// Importación de tipos de acciones
 import {
   ORDER,
   ADD_RECIPE_DETAIL,
@@ -21,10 +14,8 @@ import {
   SEARCH_RECIPE_ERROR,
 } from "./types";
 
-// Importación de funciones de comparación para el ordenamiento
 import { ascendant, descendant } from "./Comparador";
 
-// Estado inicial del reducer
 const initialState = {
   diets: [],
   recipes: [],
@@ -33,7 +24,6 @@ const initialState = {
   filteredRecipes: [],
 };
 
-// Reducer de Redux
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ORDER: {
@@ -41,21 +31,13 @@ const reducer = (state = initialState, action) => {
       let sortedRecipes = [];
 
       if (payload === "ascendenteAlf") {
-        sortedRecipes = [
-          ...state.recipes.sort((a, b) => ascendant(a.title, b.title)),
-        ];
+        sortedRecipes = [...state.recipes.sort((a, b) => ascendant(a.title, b.title))];
       } else if (payload === "descendenteAlf") {
-        sortedRecipes = [
-          ...state.recipes.sort((a, b) => descendant(a.title, b.title)),
-        ];
+        sortedRecipes = [...state.recipes.sort((a, b) => descendant(a.title, b.title))];
       } else if (payload === "ascendenteHS") {
-        sortedRecipes = [
-          ...state.recipes.sort((a, b) => a.healthScore - b.healthScore),
-        ];
+        sortedRecipes = [...state.recipes.sort((a, b) => a.healthScore - b.healthScore)];
       } else if (payload === "descendenteHS") {
-        sortedRecipes = [
-          ...state.recipes.sort((a, b) => b.healthScore - a.healthScore),
-        ];
+        sortedRecipes = [...state.recipes.sort((a, b) => b.healthScore - a.healthScore)];
       } else {
         return state;
       }
@@ -95,7 +77,7 @@ const reducer = (state = initialState, action) => {
           filteredRecipes: apiRecipes,
         };
       } else if (payload !== "AllDiets") {
-        const filteredRecipes = state.filteredRecipes.filter((recipe) =>
+        const filteredRecipes = state.recipes.filter((recipe) =>
           recipe.diets?.find((element) => element?.name === payload)
         );
         return {
@@ -161,23 +143,23 @@ const reducer = (state = initialState, action) => {
       };
     }
     case POST_RECIPE_ERROR:
-      console.log("Error al publicar la receta:", action.payload);
+      console.error("Error al publicar la receta:", action.payload);
       return state;
 
     case GET_DIETS_ERROR:
-      console.log("Error al obtener las dietas:", action.payload);
+      console.error("Error al obtener las dietas:", action.payload);
       return state;
 
     case GET_RECIPES_ERROR:
-      console.log("Error al obtener las recetas:", action.payload);
+      console.error("Error al obtener las recetas:", action.payload);
       return state;
 
     case ADD_RECIPE_DETAIL_ERROR:
-      console.log("Error al obtener el detalle de la receta:", action.payload);
+      console.error("Error al obtener el detalle de la receta:", action.payload);
       return state;
 
     case SEARCH_RECIPE_ERROR:
-      console.log("Error al buscar recetas:", action.payload);
+      console.error("Error al buscar recetas:", action.payload);
       return state;
 
     default:
